@@ -1,2 +1,2 @@
 
-<h2> Johan's Blog about Laravel</h2>
+<h2> Johan's Blog about Chess</h2>

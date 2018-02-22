@@ -1,6 +1,8 @@
-@extends ('layout')
+@extends ('layouts.master')
 
 
 @section ('content')
-  Startpunt van een nieuwe poging met Laravel! :)
+  @foreach ($posts as $post)
+    @include ('posts.posts')
+  @endforeach
 @endsection
