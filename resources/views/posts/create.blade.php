@@ -1,9 +1,12 @@
 @extends ('layouts.master')
 
 @section ('content')
+
+
+<h2>Screen for the submitting a blog post</h2>
 <button onclick="window.location.href = '/';">Home</button><br>
 <hr>
-  <h2>Create a Post!</h2>
+  <h3>Create a Post!</h3>
 
 
   <div id="form">
