@@ -1,12 +1,10 @@
 
 
-<a href="/posts/{{ $post->id}}">
-  {{ $post->title }}
-</a>
+<div class="title"><a href="/posts/{{ $post->id}}">{{ $post->title }}</a></div>
 <br>
-{{ $post->created_at->toFormattedDateString() }}
+<div class="timestamp">{{ $post->created_at->toFormattedDateString() }}</div>
 <br>
-{{ $post->body }}
+<div class="bodytext">{{ $post->body }}</div>
 <br>
-{{ $post->category}}
+<div class="category">{{ $post->category}}</div>
 <hr><br>

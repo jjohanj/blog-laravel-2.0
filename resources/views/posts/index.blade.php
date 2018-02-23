@@ -14,8 +14,10 @@
   @endforeach
 @endsection
 </div>
-<script>
 
+
+<script>
+//function to select categories without reloading the page
 function getMessage(category){
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "posts/" + category, false);
@@ -23,6 +25,5 @@ function getMessage(category){
 
     document.getElementById("main2").innerHTML = xhttp.responseText;
   }
-
 
 </script>

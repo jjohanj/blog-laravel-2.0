@@ -25,6 +25,7 @@ Route::get('/posts/{post}', 'PostsController@show');
 
 Route::post('/post/{post}/comments', 'CommentsController@store');
 
+
 // controller
 // eloquent model
 // migration
