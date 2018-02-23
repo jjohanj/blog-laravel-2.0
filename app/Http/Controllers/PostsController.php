@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-use DB;
+
 
 class PostsController extends Controller
 {
@@ -38,6 +38,12 @@ class PostsController extends Controller
       $post->save();
       //and then redirect to the main page
       return redirect('/');
+    }
+
+    public function show($id)
+    {
+      $posts = Post::find($id);
+      return view('posts.show', compact('posts'));
     }
 
     public function sortReports()

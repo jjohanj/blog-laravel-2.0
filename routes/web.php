@@ -21,8 +21,9 @@ Route::get('/posts/reports', 'PostsController@sortReports');
 
 Route::get('/posts/results', 'PostsController@sortResults');
 
+Route::get('/posts/{post}', 'PostsController@show');
 
-
+Route::post('/post/{post}/comments', 'CommentsController@store');
 
 // controller
 // eloquent model

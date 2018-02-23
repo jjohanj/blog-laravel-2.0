@@ -1,5 +1,8 @@
 
-{{ $post->title }}
+
+<a href="/posts/{{ $post->id}}">
+  {{ $post->title }}
+</a>
 <br>
 {{ $post->created_at->toFormattedDateString() }}
 <br>
@@ -7,4 +10,3 @@
 <br>
 {{ $post->category}}
 <hr><br>
-</div>

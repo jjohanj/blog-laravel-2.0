@@ -2,6 +2,7 @@
 
 @section ('content')
 <button onclick="window.location.href = '/';">Home</button><br>
+<hr>
   <h2>Create a Post!</h2>
 
 
