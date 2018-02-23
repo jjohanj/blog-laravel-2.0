@@ -25,11 +25,12 @@ class PostsController extends Controller
         'title' => 'required|max:20',
         'body' => 'required'
       ]);
-      //short version: Post::create(request(['title', 'body']));
+      //short version: Post::create(request(['title', 'body', 'category']));
       // create a new post using the request data
       $post = new Post;
       $post->title = request('title');
       $post->body = request('body');
+      $post->category = request ('category');
       // save it to the database
       $post->save();
       //and then redirect to the main page
