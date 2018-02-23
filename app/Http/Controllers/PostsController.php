@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Post;
+use DB;
 
 class PostsController extends Controller
 {
     public function index()
     {
-      $posts = Post::orderBy('id', 'desc')->get();
+      $posts = Post::orderBy('id', 'desc')
+      ->get();
       return view('posts.index', compact('posts'));
     }
 
@@ -35,7 +38,23 @@ class PostsController extends Controller
       $post->save();
       //and then redirect to the main page
       return redirect('/');
-
     }
+
+    public function sortReports()
+    {
+      $posts = Post::where('category', 'report')
+      ->orderBy('id', 'desc')
+      ->get();
+      return view('posts.reports', compact('posts'));
+    }
+
+    public function sortResults()
+    {
+      $posts = Post::where('category', 'result')
+      ->orderBy('id', 'desc')
+      ->get();
+      return view('posts.results', compact('posts'));
+    }
+
 
 }

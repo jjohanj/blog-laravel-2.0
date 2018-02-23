@@ -17,6 +17,13 @@ Route::get('/posts/create', 'PostsController@create');
 
 Route::post('/posts', 'PostsController@store');
 
+Route::get('/posts/reports', 'PostsController@sortReports');
+
+Route::get('/posts/results', 'PostsController@sortResults');
+
+
+
+
 // controller
 // eloquent model
 // migration

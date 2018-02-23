@@ -7,3 +7,4 @@
 <br>
 {{ $post->category}}
 <hr><br>
+</div>
