@@ -2,7 +2,6 @@ Trello: https://trello.com/b/x16bQCSc/laravel-blog-20
 
 Heroku: http://calm-woodland-90568.herokuapp.com/
 
-Heroku form page: https://calm-woodland-90568.herokuapp.com/posts/create
 
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
