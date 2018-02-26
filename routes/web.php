@@ -25,6 +25,10 @@ Route::get('/posts/{post}', 'PostsController@show');
 
 Route::post('/post/{post}/comments', 'CommentsController@store');
 
+Route::delete ('/posts/delete', 'CommentsController@delete');
+
+Route::get('/admin-page', 'CommentsController@show');
+
 
 // controller
 // eloquent model

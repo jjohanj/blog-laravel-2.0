@@ -6,5 +6,5 @@
 <br>
 <div class="bodytext">{{ $post->body }}</div>
 <br>
-<div class="category">{{ $post->category}}</div>
+<div class="category">{{ $post->category }}</div>
 <hr><br>

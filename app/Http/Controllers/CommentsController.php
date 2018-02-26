@@ -12,7 +12,6 @@ class CommentsController extends Controller
 
     public function store(Post $post)
     {
-
       $this->validate(request(), [
         'body' => 'required'
       ]);
@@ -22,4 +21,17 @@ class CommentsController extends Controller
       return back();
     }
 
+    public function show()
+    {
+
+      $comments = Comment::orderBy('id', 'desc')
+      ->get();
+      return view('admin-page', compact('comments'));
+      }
+
+      public function delete(Request $request){
+          $id = $request->id;
+          Comment::destroy($id);
+          return back();
+      }
 }

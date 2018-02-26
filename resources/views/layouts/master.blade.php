@@ -6,8 +6,6 @@
     <title>Johan's blog 2.0</title>
   </head>
   <body>
-
-
     <div class="container">
 
     @yield ('content')
