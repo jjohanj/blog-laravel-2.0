@@ -10,7 +10,7 @@
   <hr><br>
 
 @foreach ($posts->comments as $comment)
-  <div id="comments">
+  <div class="comments">
     {{ $comment->body }}
   </div>
 @endforeach

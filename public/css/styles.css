@@ -59,15 +59,16 @@ button {
   width: 33%;
 }
 
-#admincomment {
-  width: 30%;
-  float: left;
+.admincomment {
   padding-left: 6px;
 }
 
-#comments {
+.comments {
+  color: #800000;
   font-size: 14px;
+  padding: 4px;
 }
+
 
 #deletereactions {
   display: inline;
@@ -79,6 +80,7 @@ button {
 
 #showscreen {
   padding-left: 6px;
+  padding-right: 6px;
 }
 
 #menu {
@@ -88,4 +90,5 @@ button {
 
 #main2 {
   margin-left: 12%;
+  padding-right: 20px;
 }

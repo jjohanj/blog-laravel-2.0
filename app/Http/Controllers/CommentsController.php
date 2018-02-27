@@ -10,24 +10,29 @@ use App\Comment;
 class CommentsController extends Controller
 {
 
-    public function store(Post $post)
-    {
-      $this->validate(request(), [
+      public function store(Post $post)
+      {
+        $this->validate(request(), [
         'body' => 'required'
-      ]);
+        ]);
 
-      $post->addComment(request('body'));
+        $post->addComment(request('body'));
 
-      return back();
-    }
+        return back();
+      }
 
-    public function show()
-    {
-      $posts = Post::orderBy('id', 'desc')
-      ->get();
-      $comments = Comment::orderBy('id', 'desc')
-      ->get();
-      return view('admin-page', compact('comments', 'posts'));
+      public function comments()
+      {
+        $comments = Comment::orderBy('id', 'desc')
+        ->get();
+        return view('admin-comments', compact('comments'));
+      }
+
+      public function articles()
+      {
+        $posts = Post::orderBy('id', 'desc')
+        ->get();
+        return view('admin-articles', compact('posts'));
       }
 
       public function delete(Request $request){

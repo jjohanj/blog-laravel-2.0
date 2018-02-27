@@ -6,7 +6,8 @@
 <h2>Screen for the submitting a blog post</h2>
 <div id='createscreen'>
 <button onclick="window.location.href = '/';">Home</button>
-<button onclick="window.location.href = '/admin-page';">Beheer reacties</button><br><hr>
+<button onclick="window.location.href = '/admin-comments';">Admin comments</button>
+<button onclick="window.location.href = '/admin-articles';">Admin articles</button><br><hr>
 
 
 

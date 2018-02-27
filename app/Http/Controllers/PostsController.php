@@ -60,19 +60,11 @@ class PostsController extends Controller
       return view('posts.reports', compact('posts'));
     }
 
-    public function sortResults()
-    {
-      $posts = Post::where('category', 'result')
-      ->orderBy('id', 'desc')
-      ->get();
-      return view('posts.results', compact('posts'));
-    }
-
     public function createCategory(){
         $category = new Categories;
         $category->category = request('addcategory');
         $category->save();
-        return redirect('/');
+        return back();
     }
 
 

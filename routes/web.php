@@ -29,7 +29,9 @@ Route::delete ('/posts/delete', 'CommentsController@delete');
 
 Route::patch ('/posts/update', 'CommentsController@update');
 
-Route::get('/admin-page', 'CommentsController@show');
+Route::get('/admin-comments', 'CommentsController@comments');
+
+Route::get('/admin-articles', 'CommentsController@articles');
 
 
 // controller

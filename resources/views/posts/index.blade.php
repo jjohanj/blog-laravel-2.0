@@ -6,8 +6,9 @@
 
 
 <button class="menubutton" onclick="window.location.href = 'posts/create';">Create blog</button><hr>
+  <b>Categorie:</b>
   @foreach ($categories as $category)
-    <button class="menubutton" onclick="getMessage('{{ $category->category }}');">Show all {{ $category->category }}</button>
+    <button class="menubutton" onclick="getMessage('{{ $category->category }}');">{{ $category->category }}</button>
   @endforeach
 
 <hr>
