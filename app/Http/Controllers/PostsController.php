@@ -30,6 +30,7 @@ class PostsController extends Controller
       //short version: Post::create(request(['title', 'body', 'category']));
       // create a new post using the request data
       $post = new Post;
+      $post->controlcomments = request('comments');
       $post->title = request('title');
       $post->body = request('body');
       $post->category = request ('category');

@@ -23,10 +23,11 @@ class CommentsController extends Controller
 
     public function show()
     {
-
+      $posts = Post::orderBy('id', 'desc')
+      ->get();
       $comments = Comment::orderBy('id', 'desc')
       ->get();
-      return view('admin-page', compact('comments'));
+      return view('admin-page', compact('comments', 'posts'));
       }
 
       public function delete(Request $request){
@@ -34,4 +35,19 @@ class CommentsController extends Controller
           Comment::destroy($id);
           return back();
       }
+
+      public function update(Request $request){
+          $id = $request->id;
+          $value = $request->value;
+          $comment = Post::find($id);
+          $comment->controlcomments = $value;
+          $comment->save();
+          return back();
+      }
+
+
+
+
+
+
 }

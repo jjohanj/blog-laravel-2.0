@@ -1,3 +1,5 @@
 
-<div class="bodytext">{{ $comment->id }}
-{{ $comment->body }}</div>
+<div class="bodytext">
+{{ $comment->id }}
+{{ $comment->body }}
+</div>

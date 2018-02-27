@@ -15,6 +15,9 @@
   </div>
 @endforeach
 
+
+
+@if ($posts->controlcomments == 1)
 <br><hr>
 
 <form action="/post/{{ $posts->id }}/comments" method="POST">
@@ -22,6 +25,7 @@
   <textarea rows="5" placeholder="comment here" name="body" type="text" id="body" required></textarea></br>
   <button type="submit">Submit comment!</button>
 </form>
+@endif
 
 <br>
 <button onclick="window.location.href = '/';">Home</button>
