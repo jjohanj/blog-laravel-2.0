@@ -5,19 +5,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Categories;
+use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
     public function index()
     {
+      $categories = Categories::orderBy('id', 'desc')
+      ->get();
       $posts = Post::orderBy('id', 'desc')
       ->get();
-      return view('posts.index', compact('posts'));
+      return view('posts.index', compact('posts', 'categories'));
     }
 
     public function create()
     {
-      return view('posts.create');
+      $categories = Categories::orderBy('id', 'desc')
+      ->get();
+      return view('posts.create', compact('categories'));
     }
 
     public function store()
@@ -46,9 +52,9 @@ class PostsController extends Controller
       return view('posts.show', compact('posts'));
     }
 
-    public function sortReports()
+    public function sortReports($category)
     {
-      $posts = Post::where('category', 'report')
+      $posts = Post::where('category', $category)
       ->orderBy('id', 'desc')
       ->get();
       return view('posts.reports', compact('posts'));

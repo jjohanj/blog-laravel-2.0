@@ -12,7 +12,7 @@
   {{csrf_field()}}
 
   <input type="hidden" rows="5" placeholder="enter id to delete" name="id" type="text" value='{{ $comment->id }}'></input></br>
-  <button  type="submit">Delete comment</button>
+  <button  type="submit">Delete</button>
   </form
   <b>{{ $comment->id }}</b>
   {{ $comment->body }}
