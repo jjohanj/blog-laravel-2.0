@@ -12,32 +12,6 @@ h2 {
   padding: 2em;
 }
 
-.input {
-  width: 33%;
-}
-
-#admincomment {
-  width: 30%;
-  float: left;
-  padding-left: 6px;
-}
-
-#comments {
-  font-size: 14px;
-}
-
-#deletereactions {
-    display: inline;
-}
-
-#createscreen {
-  padding-left: 6px;
-}
-
-#showscreen {
-  padding-left: 6px;
-}
-
 body {
   margin: 0px;
 }
@@ -56,6 +30,9 @@ button {
   margin-bottom: 0px;
   text-align: left;
   margin-left: 3px;
+}
+.menubutton {
+  width: 100%;
 }
 
 .title {
@@ -76,4 +53,39 @@ button {
 .category {
   padding-left: 8px;
   font-size: 12px;
+}
+
+.input {
+  width: 33%;
+}
+
+#admincomment {
+  width: 30%;
+  float: left;
+  padding-left: 6px;
+}
+
+#comments {
+  font-size: 14px;
+}
+
+#deletereactions {
+  display: inline;
+}
+
+#createscreen {
+  padding-left: 6px;
+}
+
+#showscreen {
+  padding-left: 6px;
+}
+
+#menu {
+  float: left;
+  width: 10%;
+}
+
+#main2 {
+  margin-left: 12%;
 }

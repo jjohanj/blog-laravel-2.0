@@ -5,20 +5,19 @@
 <div id='menu'>
 
 
-<button onclick="window.location.href = 'posts/create';">Create blog</button>
+<button class="menubutton" onclick="window.location.href = 'posts/create';">Create blog</button><hr>
   @foreach ($categories as $category)
-    <button onclick="getMessage('{{ $category->category }}');">Show all {{ $category->category }}</button>
+    <button class="menubutton" onclick="getMessage('{{ $category->category }}');">Show all {{ $category->category }}</button>
   @endforeach
-
-
-
 
 <hr>
 </div>
+
 <div  id="main2">
   @foreach ($posts as $post)
     @include ('posts.posts')
   @endforeach
+
 @endsection
 </div>
 

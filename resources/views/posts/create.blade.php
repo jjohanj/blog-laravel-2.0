@@ -8,21 +8,32 @@
 <button onclick="window.location.href = '/';">Home</button>
 <button onclick="window.location.href = '/admin-page';">Beheer reacties</button><br><hr>
 
-  <h3>Create a Post!</h3>
 
 
-  <div id="form">
-    <form action="/posts" method="POST">
-      {{csrf_field()}}
-      <input placeholder="Title" name="title" type="text" id="title"></br>
+<div id="form">
+  <form action="/posts/create/category" method="POST">
+    {{csrf_field()}}
+    <input placeholder="Title" name="addcategory" type="text" id="addcategory"></br>
+    <button type="submit">Add a category</button></br>
+  </form>
+</div>
+
+
+<h3>Create a Post!</h3>
+
+
+<div id="form">
+  <form action="/posts" method="POST">
+    {{csrf_field()}}
+    <input placeholder="Title" name="title" type="text" id="title"></br>
       @foreach ($categories as $category)
         <input type="radio" name="category" value="{{ $category->category }}" checked> {{ $category->category }}<br>
       @endforeach
-      <input type="hidden" name="comments" value="1">
-      <textarea rows="5" placeholder="Blog text" name="body" type="text" id="body"></textarea></br>
-      <button type="submit">Submit Blog!</button></br>
-    </form>
-  </div>
+    <input type="hidden" name="comments" value="1">
+    <textarea rows="5" placeholder="Blog text" name="body" type="text" id="body"></textarea></br>
+    <button type="submit">Submit Blog!</button></br>
+  </form>
+</div>
 
 @include('layouts.errors')
 
