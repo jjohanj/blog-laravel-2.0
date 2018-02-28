@@ -17,7 +17,14 @@
 
 
 <h3>Create a Post!</h3>
+<div id="form">
+  <form action="/posts/create/category" method="POST">
+    {{csrf_field()}}
+    <button type="submit">Add category:</button>
+    <input placeholder="Title" name="addcategory" type="text" id="addcategory"><br><hr>
 
+  </form>
+</div>
 
 <div id="form">
   <form action="/posts" method="POST">
@@ -25,14 +32,7 @@
     <b>Title:</b> <input placeholder="Title" name="title" type="text" id="title"><hr>
     <b>Category:</b> @foreach ($categories as $category)
         <input type="radio" name="category" value="{{ $category->category }}" checked> {{ $category->category }}
-      @endforeach
-      <div id="form">
-        <form action="/posts/create/category" method="POST">
-          {{csrf_field()}}
-          <button type="submit">add a new category:</button>
-          <input placeholder="New category" name="addcategory" type="text" id="addcategory">
-        </form>
-      </div><br><br>
+      @endforeach<hr>
     <input type="hidden" name="comments" value="1">
     <textarea rows="5" placeholder="Blog text" name="body" type="text" id="body"></textarea><br>
     <button type="submit">Submit Blog!</button><br>
@@ -40,6 +40,16 @@
 </div>
 
 @include('layouts.errors')
+
+<div id="sheet">
+  <p>Text Expander</p>
+  scp = SC de Paardensprong<br>
+  ela = Eli Alia<br>
+  trn = toernooi<br>
+  scm = schaakmat <br>
+  tgs = tegenstander
+</div>
+</div>
 
 
 @endsection
