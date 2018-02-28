@@ -18,6 +18,11 @@
 
 <h3>Create a Post!</h3>
 
+<form action="/posts/create/category" method="POST">
+  {{csrf_field()}}
+  <button type="submit">add a new category:</button>
+  <input placeholder="New category" name="addcategory" type="text" id="addcategory">
+</form><br><hr>
 
 <div id="form">
   <form action="/posts" method="POST">
@@ -27,11 +32,7 @@
         <input type="radio" name="category" value="{{ $category->category }}" checked> {{ $category->category }}
       @endforeach
       <div id="form">
-        <form action="/posts/create/category" method="POST">
-          {{csrf_field()}}
-          <button type="submit">add a new category:</button>
-          <input placeholder="New category" name="addcategory" type="text" id="addcategory">
-        </form>
+
       </div><br><br>
     <input type="hidden" name="comments" value="1">
     <textarea rows="5" placeholder="Blog text" name="body" type="text" id="body"></textarea><br>
