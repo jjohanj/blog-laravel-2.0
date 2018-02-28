@@ -1,11 +1,11 @@
 @extends ('layouts.master')
-
+<h2> Johan's Blog 2.0</h2>
 @section ('content')
 
-  <h2>{{ $posts->title }}</h2>
+  <h3>{{ $posts->title }}</h3>
   <br>
   <div id="showscreen">
-  {{ $posts->body }}
+  {!! $posts->body !!}
 
   <hr><br>
 
@@ -22,7 +22,7 @@
 
 <form action="/post/{{ $posts->id }}/comments" method="POST">
   {{csrf_field()}}
-  <textarea rows="5" placeholder="comment here" name="body" type="text" id="body" required></textarea></br>
+  <input placeholder="comment here" name="body" type="text" id="body" required></input></br>
   <button type="submit">Submit comment!</button>
 </form>
 @endif

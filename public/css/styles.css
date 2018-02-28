@@ -2,8 +2,9 @@
     box-sizing: border-box;
 }
 
-textarea {
-  width: 75%;
+a {
+  color: #800000;
+  text-decoration: underline;
 }
 
 h2 {
@@ -11,6 +12,14 @@ h2 {
   color: #d9d9d9;
   padding: 2em;
 }
+
+h3 {
+  background-color: #800000;
+  padding: 1em;
+  color: #d9d9d9;
+}
+
+
 
 body {
   margin: 0px;
@@ -23,13 +32,13 @@ button {
   padding: 5px;
   text-align: center;
   text-decoration: none;
-  margin-top: 4px;
+  margin-top: 2px;
+  margin-left: 2px;
   display: inline-block;
   font-size: 14px;
   cursor: pointer;
   margin-bottom: 0px;
   text-align: left;
-  margin-left: 3px;
 }
 .menubutton {
   width: 100%;
@@ -53,11 +62,9 @@ button {
 .category {
   padding-left: 8px;
   font-size: 12px;
+  float: right;
 }
 
-.input {
-  width: 33%;
-}
 
 .admincomment {
   padding-left: 6px;
@@ -76,6 +83,7 @@ button {
 
 #createscreen {
   padding-left: 6px;
+  padding-right: 6px;
 }
 
 #showscreen {
@@ -85,10 +93,10 @@ button {
 
 #menu {
   float: left;
-  width: 10%;
+  width: 15%;
 }
 
 #main2 {
-  margin-left: 12%;
+  margin-left: 17%;
   padding-right: 20px;
 }
