@@ -1,5 +1,7 @@
 @extends ('layouts.master')
+
 <h2> Johan's Blog 2.0</h2>
+@include ('layouts/app')
 @section ('content')
 
   <h3>{{ $posts->title }}</h3>
@@ -28,7 +30,7 @@
 @endif
 
 <br>
-<button onclick="window.location.href = '/';">Home</button>
+
 </div>
 
 @endsection

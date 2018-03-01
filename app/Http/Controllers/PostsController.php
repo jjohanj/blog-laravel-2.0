@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
+
+    public function __construct (){
+      $this->middleware('auth')->except(['index', 'show', 'sortReports']);
+    }
+
     public function index()
     {
       $categories = Categories::orderBy('id', 'desc')

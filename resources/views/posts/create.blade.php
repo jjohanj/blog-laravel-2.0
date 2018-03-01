@@ -1,22 +1,21 @@
 @extends ('layouts.master')
 
-@section ('content')
-
-
 
 
 <h2>Screen for the submitting a blog post</h2>
+@include ('layouts/app')
+@section ('content')
+
 <div id='createscreen'>
-<button onclick="window.location.href = '/';">Home</button>
 <button onclick="window.location.href = '/admin-comments';">Admin comments</button>
 <button onclick="window.location.href = '/admin-articles';">Admin articles</button><br><hr>
 
-
-
-
-
-
 <h3>Create a Post!</h3>
+<div id="form">
+  <form action="/posts/create/category" method="POST">
+    {{csrf_field()}}
+    <button type="submit">Add category:</button>
+    <input placeholder="Title" name="addcategory" type="text" id="addcategory"><br><hr>
 
 <form action="/posts/create/category" method="POST">
   {{csrf_field()}}

@@ -37,3 +37,7 @@ Route::get('/admin-articles', 'CommentsController@articles');
 // controller
 // eloquent model
 // migration
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
