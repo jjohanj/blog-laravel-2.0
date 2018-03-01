@@ -1,6 +1,8 @@
 @extends ('layouts.master')
 
+
 <h2> Johan's Blog 2.0</h2>
+@include ('layouts/app')
 @section ('content')
 <div id='menu'>
 
@@ -14,7 +16,7 @@
 <hr>
 </div>
 
-<div  id="main2">
+<div id="main2">
   @foreach ($posts as $post)
     @include ('posts.posts')
   @endforeach

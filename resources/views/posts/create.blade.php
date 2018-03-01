@@ -1,20 +1,14 @@
 @extends ('layouts.master')
 
-@section ('content')
-
-
 
 
 <h2>Screen for the submitting a blog post</h2>
+@include ('layouts/app')
+@section ('content')
+
 <div id='createscreen'>
-<button onclick="window.location.href = '/';">Home</button>
 <button onclick="window.location.href = '/admin-comments';">Admin comments</button>
 <button onclick="window.location.href = '/admin-articles';">Admin articles</button><br><hr>
-
-
-
-
-
 
 <h3>Create a Post!</h3>
 <div id="form">
@@ -40,16 +34,6 @@
 </div>
 
 @include('layouts.errors')
-
-<div id="sheet">
-  <p>Text Expander</p>
-  scp = SC de Paardensprong<br>
-  ela = Eli Alia<br>
-  trn = toernooi<br>
-  scm = schaakmat <br>
-  tgs = tegenstander
-</div>
-</div>
 
 
 @endsection
