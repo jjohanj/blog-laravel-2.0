@@ -11,17 +11,14 @@
 <button onclick="window.location.href = '/admin-articles';">Admin articles</button><br><hr>
 
 <h3>Create a Post!</h3>
+
+
 <div id="form">
   <form action="/posts/create/category" method="POST">
     {{csrf_field()}}
-    <button type="submit">Add category:</button>
-    <input placeholder="Title" name="addcategory" type="text" id="addcategory"><br><hr>
-
-<form action="/posts/create/category" method="POST">
-  {{csrf_field()}}
-  <button type="submit">add a new category:</button>
-  <input placeholder="New category" name="addcategory" type="text" id="addcategory">
-</form><br><hr>
+    <button type="submit">Add a new category:</button>
+    <input placeholder="new category name" name="addcategory" type="text" id="addcategory"><br><hr>
+<form>
 
 <div id="form">
   <form action="/posts" method="POST">
