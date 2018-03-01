@@ -18,7 +18,7 @@
     {{csrf_field()}}
     <button type="submit">Add a new category:</button>
     <input placeholder="new category name" name="addcategory" type="text" id="addcategory"><br><hr>
-<form>
+</form>
 
 <div id="form">
   <form action="/posts" method="POST">
