@@ -39,6 +39,7 @@ button {
   cursor: pointer;
   margin-bottom: 0px;
   text-align: left;
+  border-radius: 2px;
 }
 .menubutton {
   width: 100%;
@@ -97,4 +98,17 @@ button {
 
 #main2 {
   margin-left: 17%;
+}
+
+#searchoptions {
+  float: right;
+}
+
+.fa.fa-search {
+  background-color: white;
+  color: gray;
+  border: 1px solid gray;
+  font-size: 15px;
+  border-radius: 4px;
+  padding-left: 2px;
 }

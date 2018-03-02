@@ -33,6 +33,8 @@ Route::get('/admin-comments', 'CommentsController@comments');
 
 Route::get('/admin-articles', 'CommentsController@articles');
 
+Route::get('/search', 'PostsController@search');
+
 
 // controller
 // eloquent model
