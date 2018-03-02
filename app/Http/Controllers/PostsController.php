@@ -80,9 +80,10 @@ class PostsController extends Controller
       $type = $request->searchfield;
 
       $search = $request->search;
-      $posts = Post::where('body', 'LIKE', '%' . $search . '%')
+      $posts = Post::where ('body', 'LIKE', '%' . $search . '%')
       ->orwhere ('title', 'LIKE', '%' . $search . '%')
       ->orwhere ('category', 'LIKE', '%' . $search . '%')
+
       ->orderBy('id', 'desc')
       ->get();
 

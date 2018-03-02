@@ -1,8 +1,9 @@
 @extends ('layouts.master')
-
-@section ('content')
 <h2>Admin page </h2>
-<button onclick="window.location.href = '/';">Home</button>
+@include ('layouts/app')
+@section ('content')
+
+<button onclick="window.location.href = 'posts/create';">Create blog post</button>
 <button onclick="window.location.href = '/admin-articles';">Admin articles</button>
 <br><hr>
 
@@ -20,7 +21,7 @@
   {{ $comment->body }}
 
 @endforeach
-<br>
+<br><hr>
 
 </div>
 
