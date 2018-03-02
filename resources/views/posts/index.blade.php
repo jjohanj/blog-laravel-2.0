@@ -3,7 +3,15 @@
 
 <h2> Johan's Blog 2.0</h2>
 @include ('layouts/app')
+
 @section ('content')
+<div id='searchoptions'>
+<form action="/search" method="GET">
+  {{csrf_field()}}
+  <input placeholder="enter keyword" name="search" type="text" id="search">
+  <button  class="fa fa-search" type="submit"></button>
+</form>
+</div>
 <div id='menu'>
 
 

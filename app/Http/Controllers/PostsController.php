@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 use App\Categories;
 use Illuminate\Support\Facades\DB;
 
@@ -72,5 +73,19 @@ class PostsController extends Controller
         return back();
     }
 
+    public function search(Request $request) {
 
+      $categories = Categories::orderBy('id', 'desc')
+      ->get();
+      $type = $request->searchfield;
+
+      $search = $request->search;
+      $posts = Post::where('body', 'LIKE', '%' . $search . '%')
+      ->orwhere ('title', 'LIKE', '%' . $search . '%')
+      ->orwhere ('category', 'LIKE', '%' . $search . '%')
+      ->orderBy('id', 'desc')
+      ->get();
+
+      return view('posts.index', compact('posts', 'categories'));
+    }
 }

@@ -13,14 +13,14 @@
 <h3>Create a Post!</h3>
 
 
-<div id="form">
+<div class="form">
   <form action="/posts/create/category" method="POST">
     {{csrf_field()}}
     <button type="submit">Add a new category:</button>
     <input placeholder="new category name" name="addcategory" type="text" id="addcategory"><br><hr>
+</form>
 
-
-<div id="form">
+<div class="form">
   <form action="/posts" method="POST">
     {{csrf_field()}}
     <b>Title:</b> <input placeholder="Title" name="title" type="text" id="title"><hr>
