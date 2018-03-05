@@ -14,8 +14,12 @@
 </div>
 <div id='menu'>
 
-
-<button class="menubutton" onclick="window.location.href = 'posts/create';">Create blog</button><hr>
+@guest
+  @else
+  @if( Auth::user()->name == 'Johan')
+  <button class="menubutton" onclick="window.location.href = 'posts/create';">Create blog</button><hr>
+  @endif
+@endguest
   <b>Categorie:</b>
   @foreach ($categories as $category)
     <button class="menubutton" onclick="getMessage('{{ $category->category }}');">{{ $category->category }}</button>

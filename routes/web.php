@@ -35,11 +35,10 @@ Route::get('/admin-articles', 'CommentsController@articles');
 
 Route::get('/search', 'PostsController@search');
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 // controller
 // eloquent model
 // migration
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

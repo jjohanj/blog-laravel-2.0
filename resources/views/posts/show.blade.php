@@ -7,6 +7,7 @@
   <h3>{{ $posts->title }}</h3>
   <br>
   <div id="showscreen">
+    
   {!! $posts->body !!}
 
   <hr><br>
@@ -17,8 +18,8 @@
   </div>
 @endforeach
 
-
-
+@guest
+@else
 @if ($posts->controlcomments == 1)
 <br><hr>
 
@@ -27,8 +28,10 @@
   <input placeholder="comment here" name="body" type="text" id="body" required></input></br>
   <button type="submit">Submit comment!</button>
 </form>
+
 @endif
 
+@endguest
 <br>
 
 </div>
