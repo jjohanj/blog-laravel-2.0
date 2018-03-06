@@ -104,6 +104,13 @@ button {
   display: none;
 }
 
+.fa.fa-trash {
+  background-color: white;
+  color: gray;
+  border: 1px solid gray;
+
+}
+
 .alternativebutton {
   background-color: white;
   color: gray;
