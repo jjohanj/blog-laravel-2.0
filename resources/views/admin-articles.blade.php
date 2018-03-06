@@ -28,5 +28,6 @@
   <button type="submit">Edit comment section</button>
 </form>
 </div>
+<hr>
 
 @endsection

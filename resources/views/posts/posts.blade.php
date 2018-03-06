@@ -6,6 +6,5 @@
 <div class="category">category: {{ $post->category }}</div>
 <br>
 <div class="bodytext">{!! $post->body !!}</div>
-<br>
 
-<hr><br>
+<hr>

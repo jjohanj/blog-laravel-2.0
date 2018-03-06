@@ -14,9 +14,9 @@ h2 {
 }
 
 h3 {
-  background-color: #800000;
+  background-color: 	#867979;
   padding: 1em;
-  color: #d9d9d9;
+  color: white;
 }
 
 
@@ -26,7 +26,7 @@ body {
 }
 
 button {
-  background-color: #800000;
+  background-color:	#800000;
   border: none;
   color: white;
   padding: 5px;
@@ -98,6 +98,16 @@ button {
 
 #main2 {
   margin-left: 17%;
+}
+
+#editfield {
+  display: none;
+}
+
+.alternativebutton {
+  background-color: white;
+  color: gray;
+  border: 1px solid gray;
 }
 
 #searchoptions {
