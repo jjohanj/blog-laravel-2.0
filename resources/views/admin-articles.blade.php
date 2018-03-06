@@ -1,8 +1,10 @@
 @extends ('layouts.master')
 
-@section ('content')
+
 
 <h2>Admin page </h2>
+@include ('layouts/app')
+@section ('content')
 <button onclick="window.location.href = '/';">Home</button>
 <button onclick="window.location.href = '/admin-comments';">Admin comments</button>
 <br><hr>
@@ -27,5 +29,6 @@
   <button type="submit">Edit comment section</button>
 </form>
 </div>
+<hr>
 
 @endsection

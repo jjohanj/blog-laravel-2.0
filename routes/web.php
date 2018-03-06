@@ -39,6 +39,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::patch ('/posts/edit', 'PostsController@edit');
+
 // controller
 // eloquent model
 // migration

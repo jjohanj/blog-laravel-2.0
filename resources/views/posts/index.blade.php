@@ -16,11 +16,11 @@
 
 @guest
   @else
-  @if( Auth::user()->name == 'Johan')
+  @if( Auth::user()->email == 'johanjorritsma@hotmail.com')
   <button class="menubutton" onclick="window.location.href = 'posts/create';">Create blog</button><hr>
   @endif
 @endguest
-  <b>Categorie:</b>
+  <b>Category:</b>
   @foreach ($categories as $category)
     <button class="menubutton" onclick="getMessage('{{ $category->category }}');">{{ $category->category }}</button>
   @endforeach

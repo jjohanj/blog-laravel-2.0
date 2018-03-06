@@ -54,8 +54,10 @@ class PostsController extends Controller
 
     public function show($id)
     {
+      $categories = Categories::orderBy('id', 'desc')
+      ->get();
       $posts = Post::find($id);
-      return view('posts.show', compact('posts'));
+      return view('posts.show', compact('posts', 'categories'));
     }
 
     public function sortReports($category)
@@ -87,5 +89,27 @@ class PostsController extends Controller
       ->get();
 
       return view('posts.index', compact('posts', 'categories'));
+    }
+
+    public function update(Request $request){
+        $id = $request->id;
+        $value = $request->value;
+        $comment = Post::find($id);
+        $comment->controlcomments = $value;
+        $comment->save();
+        return back();
+    }
+
+    public function edit(Request $request){
+        $id = $request->id;
+        $body = $request->body;
+        $title = $request->title;
+        $category = $request->category;
+        $posts = Post::find($id);
+        $posts->body = $body;
+        $posts->title = $title;
+        $posts->category = $category;
+        $posts->save();
+        return back();
     }
 }
