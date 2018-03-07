@@ -50,7 +50,7 @@
   {{csrf_field()}}
 
   <input type="hidden" rows="5" placeholder="enter id to delete" name="id" type="text" value='{{ $comment->id }}'></input></br>
-  <button  class='alternativebutton' type="submit">Delete</button>
+  <button  class='fa fa-trash' type="submit"></button>
   </form
   <div class="comments">
     {{ $comment->body }}
