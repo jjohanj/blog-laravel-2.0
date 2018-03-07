@@ -18,11 +18,16 @@ class PostsController extends Controller
 
     public function index()
     {
+      $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')
+      ->groupBy('year', 'month')
+      ->orderBy('created_at', 'desc')
+      ->get();
+
       $categories = Categories::orderBy('id', 'desc')
       ->get();
       $posts = Post::orderBy('id', 'desc')
       ->get();
-      return view('posts.index', compact('posts', 'categories'));
+      return view('posts.index', compact('posts', 'categories', 'archives'));
     }
 
     public function create()
@@ -76,6 +81,10 @@ class PostsController extends Controller
     }
 
     public function search(Request $request) {
+      $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')
+      ->groupBy('year', 'month')
+      ->orderBy('created_at', 'desc')
+      ->get();
 
       $categories = Categories::orderBy('id', 'desc')
       ->get();
@@ -88,7 +97,7 @@ class PostsController extends Controller
       ->orderBy('id', 'desc')
       ->get();
 
-      return view('posts.index', compact('posts', 'categories'));
+      return view('posts.index', compact('posts', 'categories', 'archives'));
     }
 
     public function update(Request $request){

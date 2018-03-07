@@ -12,8 +12,8 @@
 
      @if( Auth::user()->email == 'johanjorritsma@hotmail.com')
      <button class='alternativebutton'>Edit blog post</button><br><br>
-    <div id='editfield'>
-    <form action="/posts/edit" method="post">
+     <div id='editfield'>
+      <form action="/posts/edit" method="post">
       {{ method_field('Patch') }}
       {{csrf_field()}}
 
@@ -32,35 +32,52 @@
     </div>
     @endif
 
-    <script>$("button").click(function() {
-        $("#editfield").toggle();
-    });
-    </script>
 @endguest
 
 {!! $posts->body !!}
 <hr>
 
-
+@guest
 
 @foreach ($posts->comments as $comment)
-<div>
-<form action="/posts/delete" method="post" id='deletereactions'>
-  {{ method_field('DELETE') }}
-  {{csrf_field()}}
-
-  <input type="hidden" rows="5" placeholder="enter id to delete" name="id" type="text" value='{{ $comment->id }}'></input></br>
-  <button  class='fa fa-trash' type="submit"></button>
-  </form
-  <div class="comments">
-    {{ $comment->body }}
-  </div>
+<div class="comments">
+  {{ $comment->body }}
+</div>
 @endforeach
+
+  @else
+    @if( Auth::user()->email == 'johanjorritsma@hotmail.com')
+      @foreach ($posts->comments as $comment)
+        <div>
+          <form action="/posts/delete" method="post" id='deletereactions'>
+            {{ method_field('DELETE') }}
+            {{csrf_field()}}
+
+            <input type="hidden" rows="5" placeholder="enter id to delete" name="id" type="text" value='{{ $comment->id }}'></input></br>
+            <button  class='fa fa-trash' type="submit"></button>
+          </form>
+          {{ $comment->body }}
+      @endforeach
+
+      @else
+
+      @foreach ($posts->comments as $comment)
+      <div class="comments">
+        {{ $comment->body }}
+      </div>
+      @endforeach
+
+
+
+    @endif
+
+@endguest
 
 @guest
 
-  <hr><button class='alternativebutton' onclick="window.location.href = '/login';">Login to comment</button>
-
+  <hr>
+  <button class='alternativebutton' onclick="window.location.href = '/login';">Login to comment</button>
+  <hr>
 @else
 @if ($posts->controlcomments == 1)
 <hr>
@@ -74,10 +91,13 @@
 @endif
 
 
-
 @endguest
 <br>
 
 </div>
+<script>$(".alternativebutton").click(function() {
+    $("#editfield").toggle();
+});
+</script>
 
 @endsection
