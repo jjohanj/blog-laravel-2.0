@@ -189,19 +189,3 @@ button {
 
 
 }
-
-@media  (max-width: 768px) {
-  #menu {
-    display: none;
-  }
-
-  #searchoptions {
-    width: 100%;
-  }
-
-  #main2 {
-    margin-left: 0px;
-  }
-
-
-}
