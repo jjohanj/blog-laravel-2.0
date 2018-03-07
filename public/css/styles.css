@@ -129,3 +129,19 @@ button {
   border-radius: 4px;
   padding-left: 2px;
 }
+
+@media  (max-width: 768px) {
+  #menu {
+    display: none;
+  }
+
+  #searchoptions {
+    width: 100%;
+  }
+
+  #main2 {
+    margin-left: 0px;
+  }
+
+
+}
