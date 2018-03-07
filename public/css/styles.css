@@ -108,7 +108,6 @@ button {
   background-color: white;
   color: gray;
   border: 1px solid gray;
-
 }
 
 .alternativebutton {
@@ -117,8 +116,8 @@ button {
   border: 1px solid gray;
 }
 
-#searchoptions {
-  float: right;
+#search{
+  width: 75%;
 }
 
 .fa.fa-search {
@@ -128,6 +127,67 @@ button {
   font-size: 15px;
   border-radius: 4px;
   padding-left: 2px;
+  float: right;
+}
+
+.dropbtn {
+    background-color: #d9d9d9;
+    color: black;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    outline:none;
+}
+.dropbtn:hover {
+  cursor: default;
+  border: solid white 0px;
+}
+
+@media  (max-width: 768px) {
+  #menu {
+  width: 100%;
+  }
+
+  #searchoptions {
+    width: 100%;
+  }
+
+  #main2 {
+    margin-left: 0px;
+  }
+
+  /* Dropdown */
+.dropbtn {
+  background-color: #d9d9d9;
+  font-size: 14px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropbtn:hover {
+  cursor: default;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
 }
 
 @media  (max-width: 768px) {

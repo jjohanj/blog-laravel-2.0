@@ -5,13 +5,7 @@
 @include ('layouts/app')
 
 @section ('content')
-<div id='searchoptions'>
-<form action="/search" method="GET">
-  {{csrf_field()}}
-  <input placeholder="enter keyword" name="search" type="text" id="search">
-  <button  class="fa fa-search" type="submit"></button>
-</form>
-</div>
+
 <div id='menu'>
 
 @guest
@@ -20,11 +14,22 @@
   <button class="menubutton" onclick="window.location.href = 'posts/create';">Create blog</button><hr>
   @endif
 @endguest
-  <b>Category:</b>
-  @foreach ($categories as $category)
-    <button class="menubutton" onclick="getMessage('{{ $category->category }}');">{{ $category->category }}</button>
-  @endforeach
-
+  <div class="dropdown">
+    <button class="dropbtn">Category</button>
+      <div class="dropdown-content">
+        @foreach ($categories as $category)
+        <button class="menubutton" onclick="getMessage('{{ $category->category }}');">{{ $category->category }}</button>
+        @endforeach
+        <hr>
+        <div id='searchoptions'>
+        <form action="/search" method="GET">
+          {{csrf_field()}}
+          <input placeholder="enter keyword" name="search" type="text" id="search">
+          <button  class="fa fa-search" type="submit"></button>
+        </form>
+        </div>
+      </div>
+  </div>
 <hr>
 </div>
 
