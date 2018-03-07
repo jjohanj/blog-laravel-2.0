@@ -15,22 +15,30 @@
   @endif
 @endguest
   <div class="dropdown">
+
     <button class="dropbtn">Category</button>
+
       <div class="dropdown-content">
+
         @foreach ($categories as $category)
         <button class="menubutton" onclick="getMessage('{{ $category->category }}');">{{ $category->category }}</button>
         @endforeach
-        <hr>
+        <button class="dropbtn">Archives</button>
+        @foreach ($archives as $month)
+        <button class="menubutton" onclick="getMessage('{{ $category->category }}');">{{ $month->month}}</button>
+        @endforeach
+        <button class="dropbtn">Search</button>
         <div id='searchoptions'>
-        <form action="/search" method="GET">
+        <form action="/search" method="GET" id='searchform'>
           {{csrf_field()}}
           <input placeholder="enter keyword" name="search" type="text" id="search">
           <button  class="fa fa-search" type="submit"></button>
         </form>
-        </div>
+
       </div>
   </div>
 <hr>
+</div>
 </div>
 
 <div id="main2">

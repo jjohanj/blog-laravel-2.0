@@ -98,7 +98,10 @@
 <script>$(".alternativebutton").click(function() {
     $("#editfield").toggle();
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
 </script>
 
 @endsection
