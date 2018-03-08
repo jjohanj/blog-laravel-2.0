@@ -41,6 +41,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::patch ('/posts/edit', 'PostsController@edit');
 
+Route::get('/posts/sort/date/{category}', 'PostsController@sortDate');
+
 // controller
 // eloquent model
 // migration

@@ -8,12 +8,13 @@ use App\Post;
 use App\User;
 use App\Categories;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class PostsController extends Controller
 {
 
     public function __construct (){
-      $this->middleware('auth')->except(['index', 'show', 'sortReports', 'search']);
+      $this->middleware('auth')->except(['index', 'show', 'sortReports', 'search', 'sortDate']);
     }
 
     public function index()
@@ -73,6 +74,19 @@ class PostsController extends Controller
       return view('posts.reports', compact('posts'));
     }
 
+      public function sortDate($category)
+      {
+        $month_number = date("n",strtotime($category));
+
+
+        $posts = Post::whereMonth('created_at', $month_number)
+        ->orderBy('id', 'desc')
+        ->get();
+        return view('posts.reports', compact('posts'));
+      }
+
+
+
     public function createCategory(){
         $category = new Categories;
         $category->category = request('addcategory');
@@ -121,4 +135,8 @@ class PostsController extends Controller
         $posts->save();
         return back();
     }
+
+
+
+
 }

@@ -144,8 +144,18 @@ padding:2px;
   float: right;
 }
 
-.dropbtn {
+.dropbtn1 {
+  display: none;
     background-color: white;
+    color: black;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    outline:none;
+}
+
+.dropbtn {
+    background-color: #d9d9d9;
     color: black;
     font-size: 14px;
     border: none;
@@ -198,6 +208,12 @@ padding:2px;
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.dropbtn1 {
+  display: inline;
+  background-color: #d9d9d9;
+  padding-right: 16px;
 }
 
 

@@ -5,7 +5,7 @@
 <h2>Admin page </h2>
 @include ('layouts/app')
 @section ('content')
-<button onclick="window.location.href = '/';">Home</button>
+<button onclick="window.location.href = 'posts/create';">Create</button>
 <button onclick="window.location.href = '/admin-comments';">Admin comments</button>
 <br><hr>
 

@@ -90,12 +90,13 @@
 
 @endif
 
-
 @endguest
 <br>
 
 </div>
-<script>$(".alternativebutton").click(function() {
+<script>
+src="jquery-3.3.1.min.js"
+$(".alternativebutton").click(function() {
     $("#editfield").toggle();
 });
 </script>
