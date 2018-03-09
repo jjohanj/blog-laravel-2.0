@@ -19,7 +19,7 @@
     <button class="dropbtn1">Menu</button>
 
       <div class="dropdown-content">
-      
+
         <div id='searchoptions'>
         <form action="/search" method="GET" id='searchform'>
           {{csrf_field()}}
@@ -46,8 +46,17 @@
     @include ('posts.posts')
   @endforeach
 
-@endsection
+
+
 </div>
+
+
+
+
+@endsection
+
+
+
 
 
 <script>

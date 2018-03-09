@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Comment;
+use App\User;
 
 class CommentsController extends Controller
 {
@@ -47,6 +48,15 @@ class CommentsController extends Controller
           $comment = Post::find($id);
           $comment->controlcomments = $value;
           $comment->save();
+          return back();
+      }
+
+      public function color(Request $request){
+          $id = $request->id;
+          $value = $request->color;
+          $style = User::find($id);
+          $style->color = $value;
+          $style->save();
           return back();
       }
 

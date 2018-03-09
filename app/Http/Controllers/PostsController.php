@@ -19,6 +19,8 @@ class PostsController extends Controller
 
     public function index()
     {
+      $users = User::all();
+
       $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')
       ->groupBy('year', 'month')
       ->orderBy('created_at', 'desc')
@@ -28,7 +30,7 @@ class PostsController extends Controller
       ->get();
       $posts = Post::orderBy('id', 'desc')
       ->get();
-      return view('posts.index', compact('posts', 'categories', 'archives'));
+      return view('posts.index', compact('posts', 'categories', 'archives', 'users'));
     }
 
     public function create()

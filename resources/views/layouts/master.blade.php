@@ -20,14 +20,15 @@
     </script>
 
 
-    
+
   </head>
   <body>
 
     <div class="container">
 
     @yield ('content')
-
+    
+    <div id="colors" >@include ('layouts.themes')</div>
     </div>
 
   </body>

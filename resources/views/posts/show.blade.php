@@ -26,7 +26,7 @@
       <b>Category:</b> @foreach ($categories as $category)
           <input type="radio" name="category" value="{{ $category->category }}" checked> {{ $category->category }}
         @endforeach<br>
-      <button type=submit>Save changes</button>
+      <button class='menubutton2' type=submit>Save changes</button>
       <hr><br>
     </form>
     </div>
@@ -85,7 +85,7 @@
 <form action="/post/{{ $posts->id }}/comments" method="POST">
   {{csrf_field()}}
   <input placeholder="comment here" name="body" type="text" id="body" required></input></br>
-  <button type="submit">Submit comment!</button>
+  <button class='menubutton2' type="submit">Submit comment!</button>
 </form>
 
 @endif
@@ -100,5 +100,5 @@ $(".alternativebutton").click(function() {
     $("#editfield").toggle();
 });
 </script>
-
+<hr>
 @endsection
