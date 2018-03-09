@@ -84,8 +84,8 @@
 
 <form action="/post/{{ $posts->id }}/comments" method="POST">
   {{csrf_field()}}
-  <input placeholder="comment here" name="body" type="text" id="body" required></input></br>
-  <button class='menubutton2' type="submit">Submit comment!</button>
+  <input placeholder="comment here" name="body" type="text" id="body" required></input>
+  <button class='menubutton2' type="submit">send</button>
 </form>
 
 @endif
