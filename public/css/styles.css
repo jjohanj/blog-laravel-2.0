@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 td {
   width: 20px;
   height: 20px;
@@ -46,6 +47,10 @@ button {
 }
 .menubutton {
   width: 100%;
+}
+
+.footer {
+ float: right;
 }
 
 .title {

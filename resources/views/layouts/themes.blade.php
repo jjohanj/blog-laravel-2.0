@@ -4,8 +4,12 @@
 @guest
   @else
 
-  <table style="width:100%">
+  <div class="footer">
+
+  <table>
+
   <tr>
+    style:
     <td><form action="/posts/color" method="post">
       {{ method_field('Patch') }}
       {{csrf_field()}}
@@ -51,7 +55,7 @@
     </tr>
 
 </table>
-
+</div>
 
 <script>
 src="jquery-3.3.1.min.js"
