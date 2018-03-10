@@ -23,7 +23,7 @@ Route::get('/posts/sort/{category}', 'PostsController@sortReports');
 
 Route::get('/posts/{post}', 'PostsController@show');
 
-Route::post('/post/{post}/comments', 'CommentsController@store');
+Route::post('/post/{post}/comments', 'CommentsController@store2');
 
 Route::delete ('/posts/delete', 'CommentsController@delete');
 
@@ -40,6 +40,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::patch ('/posts/edit', 'PostsController@edit');
+
+Route::get('/posts/sort/date/{category}', 'PostsController@sortDate');
+
+Route::patch ('/posts/color', 'CommentsController@color');
 
 // controller
 // eloquent model

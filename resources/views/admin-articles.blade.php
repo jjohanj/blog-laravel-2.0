@@ -3,9 +3,8 @@
 
 @include ('layouts/app')
 @section ('content')
-
-<button onclick="window.location.href = 'posts/create';">Create blog post</button>
-<button onclick="window.location.href = '/admin-comments';">Admin comments</button>
+<button class="menubutton2" onclick="window.location.href = 'posts/create';">Create</button>
+<button class="menubutton2" onclick="window.location.href = '/admin-comments';">Admin comments</button>
 <br><hr>
 
 <div class='admincomment'>
@@ -25,7 +24,7 @@
   <input type="radio" name="value" value="1" checked> 1: Enalbe<br>
   <input type="radio" name="value" value="0"> 0: Disable<br>
 
-  <button type="submit">Edit comment section</button>
+  <button class="menubutton2" type="submit">Edit comment section</button>
 </form>
 </div>
 <hr>

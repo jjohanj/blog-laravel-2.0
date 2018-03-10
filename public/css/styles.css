@@ -2,8 +2,14 @@
     box-sizing: border-box;
 }
 
+
+td {
+  width: 20px;
+  height: 20px;
+}
+
 a {
-  color: #800000;
+  color: #867979;
   text-decoration: underline;
 }
 
@@ -14,12 +20,10 @@ h2 {
 }
 
 h3 {
-  background-color: 	#867979;
+  background-color: #867979;
   padding: 1em;
   color: white;
 }
-
-
 
 body {
   margin: 0px;
@@ -43,6 +47,10 @@ button {
 }
 .menubutton {
   width: 100%;
+}
+
+.footer {
+ float: right;
 }
 
 .title {
@@ -71,7 +79,7 @@ button {
 }
 
 .comments {
-  color: #800000;
+  color: #867979;
   font-size: 14px;
   padding: 4px;
 }
@@ -94,6 +102,10 @@ button {
 #menu {
   float: left;
   width: 15%;
+}
+
+#colors {
+  margin-left: 17%;
 }
 
 #main2 {
@@ -144,8 +156,18 @@ padding:2px;
   float: right;
 }
 
-.dropbtn {
+.dropbtn1 {
+  display: none;
     background-color: white;
+    color: black;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    outline:none;
+}
+
+.dropbtn {
+    background-color: #d9d9d9;
     color: black;
     font-size: 14px;
     border: none;
@@ -164,6 +186,10 @@ padding:2px;
 
   #searchoptions {
     width: 100%;
+  }
+
+  #colors {
+    margin-left: 0px;
   }
 
   #main2 {
@@ -198,6 +224,12 @@ padding:2px;
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.dropbtn1 {
+  display: inline;
+  background-color: #d9d9d9;
+  padding-right: 120px;
 }
 
 

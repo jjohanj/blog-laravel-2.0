@@ -6,20 +6,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Comment;
+use App\User;
 
 class CommentsController extends Controller
 {
 
-      public function store(Post $post)
-      {
-        $this->validate(request(), [
-        'body' => 'required'
-        ]);
+  public function store2(Post $post){
 
-        $post->addComment(request('body'));
+  $post = new Comment;
+  $post->body = request('body');
+  $post->user = request('user');
+  $post->post_id = request('post_id');
+  // save it to the database
+  $post->save();
 
-        return back();
-      }
+  return back();
+  }
 
       public function comments()
       {
@@ -47,6 +49,15 @@ class CommentsController extends Controller
           $comment = Post::find($id);
           $comment->controlcomments = $value;
           $comment->save();
+          return back();
+      }
+
+      public function color(Request $request){
+          $id = $request->id;
+          $value = $request->color;
+          $style = User::find($id);
+          $style->color = $value;
+          $style->save();
           return back();
       }
 

@@ -2,9 +2,8 @@
 <h2>Admin page </h2>
 @include ('layouts/app')
 @section ('content')
-
-<button onclick="window.location.href = 'posts/create';">Create blog post</button>
-<button onclick="window.location.href = '/admin-articles';">Admin articles</button>
+<button class="menubutton2" onclick="window.location.href = '/posts/create';">Create</button>
+<button class="menubutton2" onclick="window.location.href = '/admin-articles';">Admin articles</button>
 <br><hr>
 
 <div class='admincomment'>

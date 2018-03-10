@@ -8,16 +8,19 @@ use App\Post;
 use App\User;
 use App\Categories;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class PostsController extends Controller
 {
 
     public function __construct (){
-      $this->middleware('auth')->except(['index', 'show', 'sortReports', 'search']);
+      $this->middleware('auth')->except(['index', 'show', 'sortReports', 'search', 'sortDate']);
     }
 
     public function index()
     {
+      $users = User::all();
+
       $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')
       ->groupBy('year', 'month')
       ->orderBy('created_at', 'desc')
@@ -27,7 +30,7 @@ class PostsController extends Controller
       ->get();
       $posts = Post::orderBy('id', 'desc')
       ->get();
-      return view('posts.index', compact('posts', 'categories', 'archives'));
+      return view('posts.index', compact('posts', 'categories', 'archives', 'users'));
     }
 
     public function create()
@@ -50,6 +53,7 @@ class PostsController extends Controller
       $post->controlcomments = request('comments');
       $post->title = request('title');
       $post->body = request('body');
+      $post->user = request('user');
       $post->category = request ('category');
       // save it to the database
       $post->save();
@@ -72,6 +76,19 @@ class PostsController extends Controller
       ->get();
       return view('posts.reports', compact('posts'));
     }
+
+      public function sortDate($category)
+      {
+        $month_number = date("n",strtotime($category));
+
+
+        $posts = Post::whereMonth('created_at', $month_number)
+        ->orderBy('id', 'desc')
+        ->get();
+        return view('posts.reports', compact('posts'));
+      }
+
+
 
     public function createCategory(){
         $category = new Categories;
@@ -122,4 +139,8 @@ class PostsController extends Controller
         $posts->save();
         return back();
     }
+
+
+
+
 }
