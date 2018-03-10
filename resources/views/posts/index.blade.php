@@ -10,7 +10,7 @@
 
 @guest
   @else
-  @if( Auth::user()->email == 'johanjorritsma@hotmail.com')
+  @if( Auth::user()->email == 'johanjorritsma@hotmail.com' || Auth::user()->email == 'hiekey@hotmail.com')
   <button class="menubutton" onclick="window.location.href = 'posts/create';">Create blog</button><hr>
   @endif
 @endguest

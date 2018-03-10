@@ -27,6 +27,7 @@
         <input type="radio" name="category" value="{{ $category->category }}" checked> {{ $category->category }}
       @endforeach
       <br><br>
+      <input type="hidden" value="{{Auth::user()->name }}" name="user">
     <input type="hidden" name="comments" value="1">
     <textarea rows="5" placeholder="Blog text" name="body" type="text" id="body"></textarea><br>
     <button class="menubutton2" type="submit">Submit Blog!</button><br>

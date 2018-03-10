@@ -23,7 +23,7 @@ Route::get('/posts/sort/{category}', 'PostsController@sortReports');
 
 Route::get('/posts/{post}', 'PostsController@show');
 
-Route::post('/post/{post}/comments', 'CommentsController@store');
+Route::post('/post/{post}/comments', 'CommentsController@store2');
 
 Route::delete ('/posts/delete', 'CommentsController@delete');
 

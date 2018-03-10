@@ -53,6 +53,7 @@ class PostsController extends Controller
       $post->controlcomments = request('comments');
       $post->title = request('title');
       $post->body = request('body');
+      $post->user = request('user');
       $post->category = request ('category');
       // save it to the database
       $post->save();

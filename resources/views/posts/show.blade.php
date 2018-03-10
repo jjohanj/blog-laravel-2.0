@@ -41,6 +41,7 @@
 
 @foreach ($posts->comments as $comment)
 <div class="comments">
+  {{ $comment->user }}:
   {{ $comment->body }}
 </div>
 @endforeach
@@ -56,6 +57,7 @@
             <input type="hidden" rows="5" placeholder="enter id to delete" name="id" type="text" value='{{ $comment->id }}'></input></br>
             <button  class='fa fa-trash' type="submit"></button>
           </form>
+          {{ $comment->user }}:
           {{ $comment->body }}
       @endforeach
 
@@ -63,6 +65,7 @@
 
       @foreach ($posts->comments as $comment)
       <div class="comments">
+        {{ $comment->user }}:
         {{ $comment->body }}
       </div>
       @endforeach
@@ -85,6 +88,8 @@
 <form action="/post/{{ $posts->id }}/comments" method="POST">
   {{csrf_field()}}
   <input placeholder="comment here" name="body" type="text" id="body" required></input>
+  <input placeholder="user" type="hidden" name="user" type="text" value="{{ Auth::user()->name }}" required></input>
+  <input placeholder="user" type="hidden" name="post_id" type="text" value="{{ $posts->id }}" required></input>
   <button class='menubutton2' type="submit">send</button>
 </form>
 

@@ -51,6 +51,15 @@
       <input type="hidden" name="color" value="#600080">
       <input type="hidden" name="id" value='{{ Auth::user()->id }}'>
       <button style="background-color: #600080; width:20px; height:20px" type="submit"></button></td>
+    </form></td>
+      <td><form action="/posts/color" method="post">
+      {{ method_field('Patch') }}
+      {{csrf_field()}}
+      <input type="hidden" name="color" value="#b8377a">
+      <input type="hidden" name="id" value='{{ Auth::user()->id }}'>
+      <button style="background-color: #b8377a; width:20px; height:20px" type="submit"></button></td>
+
+
 
     </tr>
 

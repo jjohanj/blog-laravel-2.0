@@ -11,16 +11,17 @@ use App\User;
 class CommentsController extends Controller
 {
 
-      public function store(Post $post)
-      {
-        $this->validate(request(), [
-        'body' => 'required'
-        ]);
+  public function store2(Post $post){
 
-        $post->addComment(request('body'));
+  $post = new Comment;
+  $post->body = request('body');
+  $post->user = request('user');
+  $post->post_id = request('post_id');
+  // save it to the database
+  $post->save();
 
-        return back();
-      }
+  return back();
+  }
 
       public function comments()
       {
